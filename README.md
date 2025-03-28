@@ -1,5 +1,6 @@
 ## Welcome to Git
+## Heyaaa, I am the junior dev
 
-- This is coming from branch "dev-2"
+- Merge conflict fixed.
 
 - I'm adding this from the 'features' branch
