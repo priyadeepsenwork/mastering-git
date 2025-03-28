@@ -1,5 +1,6 @@
+## Welcome to Git
 ## Heyaaa, I am the junior dev
 
-- Yo, Jishu here! (branch : dev)
+- Merge conflict fixed.
 
 - I'm adding this from the 'features' branch
