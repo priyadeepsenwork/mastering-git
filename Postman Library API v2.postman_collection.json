@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "618626ef-70f2-4100-a110-0262f903c545",
+		"name": "Postman Library API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40941157",
+		"_collection_link": "https://academy-team-6627.postman.co/workspace/New-Team-Workspace~b4c68f8e-f571-49e6-9fc8-a8cc6da47a02/collection/40941157-618626ef-70f2-4100-a110-0262f903c545?action=share&source=collection_link&creator=40941157"
+	},
+	"item": [
+		{
+			"name": "get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Books by genre",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?genre=fiction",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "checkedOut",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiple Query Parameters",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books?genre=fiction&checkedOut=false",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "fiction"
+						},
+						{
+							"key": "checkedOut",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Github API path/query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Property</th>",
+							"        <th>Value</th>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Login</td>",
+							"        <td>{{response.login}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>ID</td>",
+							"        <td>{{response.id}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Node ID</td>",
+							"        <td>{{response.node_id}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Avatar URL</td>",
+							"        <td>{{response.avatar_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Gravatar ID</td>",
+							"        <td>{{response.gravatar_id}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>URL</td>",
+							"        <td>{{response.url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>HTML URL</td>",
+							"        <td>{{response.html_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Followers URL</td>",
+							"        <td>{{response.followers_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Following URL</td>",
+							"        <td>{{response.following_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Gists URL</td>",
+							"        <td>{{response.gists_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Starred URL</td>",
+							"        <td>{{response.starred_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Subscriptions URL</td>",
+							"        <td>{{response.subscriptions_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Organizations URL</td>",
+							"        <td>{{response.organizations_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Repos URL</td>",
+							"        <td>{{response.repos_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Events URL</td>",
+							"        <td>{{response.events_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Received Events URL</td>",
+							"        <td>{{response.received_events_url}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Type</td>",
+							"        <td>{{response.type}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>User View Type</td>",
+							"        <td>{{response.user_view_type}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Site Admin</td>",
+							"        <td>{{response.site_admin}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Name</td>",
+							"        <td>{{response.name}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Company</td>",
+							"        <td>{{response.company}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Blog</td>",
+							"        <td>{{response.blog}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Location</td>",
+							"        <td>{{response.location}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Email</td>",
+							"        <td>{{response.email}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Hireable</td>",
+							"        <td>{{response.hireable}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Bio</td>",
+							"        <td>{{response.bio}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Twitter Username</td>",
+							"        <td>{{response.twitter_username}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Public Repos</td>",
+							"        <td>{{response.public_repos}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Public Gists</td>",
+							"        <td>{{response.public_gists}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Followers</td>",
+							"        <td>{{response.followers}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Following</td>",
+							"        <td>{{response.following}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Created At</td>",
+							"        <td>{{response.created_at}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Updated At</td>",
+							"        <td>{{response.updated_at}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{github_api}}/repos/priyadeepsenwork/Javascript-Mastery-Tutorial",
+					"host": [
+						"{{github_api}}"
+					],
+					"path": [
+						"repos",
+						"priyadeepsenwork",
+						"Javascript-Mastery-Tutorial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by :id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "d6bb9ce4-4314-42e8-b30f-df1bd48ca43c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const id = pm.response.json().id",
+							"pm.collectionVariables.set(\"id\", id)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "postmanrulz",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"The Lord of the Rings : Volume 1\",\n  \"author\": \"John Ronald Reuel Tolkein\",\n  \"genre\": \"High Fantasy Adventure\",\n  \"yearPublished\": 1954\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "postmanrulz",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://library-api.postmanlabs.com",
+			"type": "default"
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
